@@ -1,0 +1,21 @@
+2020-12-10 11:39:59.774  INFO 12760 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 12760 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-10 11:39:59.779 DEBUG 12760 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-10 11:39:59.779  INFO 12760 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-10 11:40:00.661  INFO 12760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-10 11:40:00.680  INFO 12760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-10 11:40:00.681  INFO 12760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-10 11:40:00.779  INFO 12760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-10 11:40:00.781  INFO 12760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 962 ms
+2020-12-10 11:40:00.951  INFO 12760 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-10 11:40:01.130  INFO 12760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-10 11:40:01.133  INFO 12760 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.694 seconds (JVM running for 2.454)
+2020-12-10 11:40:56.616  INFO 12760 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-10 11:40:56.616  INFO 12760 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-10 11:40:56.620  INFO 12760 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-10 11:40:56.642  INFO 12760 --- [http-nio-80-exec-1] c.o.w.controller.WatchlistController     : GET /watchlistItemForm called
+2020-12-10 11:41:05.285  INFO 12760 --- [http-nio-80-exec-2] c.o.w.controller.WatchlistController     : POST /watchlistItemForm called
+2020-12-10 11:41:05.293  INFO 12760 --- [http-nio-80-exec-3] c.o.w.controller.WatchlistController     : GET /watchlist called
+2020-12-10 11:41:05.300  INFO 12760 --- [http-nio-80-exec-3] c.o.w.service.MovieRatingServiceImpl     : Calling omdbapi with url http://www.omdbapi.com/?apikey=56b585e1&t=Twilight
+2020-12-10 11:41:05.488 DEBUG 12760 --- [http-nio-80-exec-3] c.o.w.service.MovieRatingServiceImpl     : Omdb api response : {"Title":"Twilight","Year":"2008","Rated":"PG-13","Released":"21 Nov 2008","Runtime":"122 min","Genre":"Drama, Fantasy, Romance","Director":"Catherine Hardwicke","Writer":"Melissa Rosenberg (screenplay), Stephenie Meyer (novel)","Actors":"Kristen Stewart, Sarah Clarke, Matt Bushell, Billy Burke","Plot":"Bella Swan moves to Forks and encounters Edward Cullen, a gorgeous boy with a secret.","Language":"English","Country":"USA","Awards":"29 wins & 15 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BMTQ2NzUxMTAxN15BMl5BanBnXkFtZTcwMzEyMTIwMg@@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"5.2/10"},{"Source":"Rotten Tomatoes","Value":"49%"},{"Source":"Metacritic","Value":"56/100"}],"Metascore":"56","imdbRating":"5.2","imdbVotes":"422,151","imdbID":"tt1099212","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"Temple Hill","Website":"N/A","Response":"True"}
+2020-12-10 11:43:02.057  INFO 12760 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-10 11:43:02.058  INFO 12760 --- [RMI TCP Connection(5)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
