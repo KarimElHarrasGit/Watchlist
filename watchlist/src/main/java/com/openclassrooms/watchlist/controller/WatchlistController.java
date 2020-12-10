@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -23,6 +25,7 @@ import com.openclassrooms.watchlist.service.WatchlistService;
 public class WatchlistController {
 
     private WatchlistService watchlistService;
+    private final Logger logger = LoggerFactory.getLogger(WatchlistController.class);
 	
 	@Autowired
 	public WatchlistController(WatchlistService watchlistService) {
@@ -33,6 +36,8 @@ public class WatchlistController {
 	@GetMapping("/watchlist")
 	public ModelAndView getList() {
 
+		logger.info("GET /watchlist called");
+		
 		String viewName = "watchlist";
 		Map<String, Object> model = new HashMap<String, Object>();
 
@@ -45,6 +50,8 @@ public class WatchlistController {
 	@PostMapping("/watchlistItemForm")
 	public ModelAndView submitWatchlistItemForm(@Valid WatchlistItem watchlistItem, BindingResult bindingResult) {
 
+		logger.info("POST /watchlistItemForm called");
+		
 		if (bindingResult.hasErrors()) {
 			return new ModelAndView("watchlistItemForm");
 		}
@@ -67,6 +74,9 @@ public class WatchlistController {
 
 	@GetMapping("/watchlistItemForm")
 	public ModelAndView showWatchlistItemForm(@RequestParam(required = false) Integer id) {
+		
+		logger.info("GET /watchlistItemForm called");
+		
 		Map<String, Object> model = new HashMap<String, Object>();
 
 		WatchlistItem watchlistItem = watchlistService.findWatchlistItemById(id);
