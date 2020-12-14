@@ -1,21 +1,282 @@
-2020-12-10 11:39:59.774  INFO 12760 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 12760 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
-2020-12-10 11:39:59.779 DEBUG 12760 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
-2020-12-10 11:39:59.779  INFO 12760 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
-2020-12-10 11:40:00.661  INFO 12760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
-2020-12-10 11:40:00.680  INFO 12760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-12-10 11:40:00.681  INFO 12760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
-2020-12-10 11:40:00.779  INFO 12760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-12-10 11:40:00.781  INFO 12760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 962 ms
-2020-12-10 11:40:00.951  INFO 12760 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-12-10 11:40:01.130  INFO 12760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
-2020-12-10 11:40:01.133  INFO 12760 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.694 seconds (JVM running for 2.454)
-2020-12-10 11:40:56.616  INFO 12760 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-12-10 11:40:56.616  INFO 12760 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-12-10 11:40:56.620  INFO 12760 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-12-10 11:40:56.642  INFO 12760 --- [http-nio-80-exec-1] c.o.w.controller.WatchlistController     : GET /watchlistItemForm called
-2020-12-10 11:41:05.285  INFO 12760 --- [http-nio-80-exec-2] c.o.w.controller.WatchlistController     : POST /watchlistItemForm called
-2020-12-10 11:41:05.293  INFO 12760 --- [http-nio-80-exec-3] c.o.w.controller.WatchlistController     : GET /watchlist called
-2020-12-10 11:41:05.300  INFO 12760 --- [http-nio-80-exec-3] c.o.w.service.MovieRatingServiceImpl     : Calling omdbapi with url http://www.omdbapi.com/?apikey=56b585e1&t=Twilight
-2020-12-10 11:41:05.488 DEBUG 12760 --- [http-nio-80-exec-3] c.o.w.service.MovieRatingServiceImpl     : Omdb api response : {"Title":"Twilight","Year":"2008","Rated":"PG-13","Released":"21 Nov 2008","Runtime":"122 min","Genre":"Drama, Fantasy, Romance","Director":"Catherine Hardwicke","Writer":"Melissa Rosenberg (screenplay), Stephenie Meyer (novel)","Actors":"Kristen Stewart, Sarah Clarke, Matt Bushell, Billy Burke","Plot":"Bella Swan moves to Forks and encounters Edward Cullen, a gorgeous boy with a secret.","Language":"English","Country":"USA","Awards":"29 wins & 15 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BMTQ2NzUxMTAxN15BMl5BanBnXkFtZTcwMzEyMTIwMg@@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"5.2/10"},{"Source":"Rotten Tomatoes","Value":"49%"},{"Source":"Metacritic","Value":"56/100"}],"Metascore":"56","imdbRating":"5.2","imdbVotes":"422,151","imdbID":"tt1099212","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"Temple Hill","Website":"N/A","Response":"True"}
-2020-12-10 11:43:02.057  INFO 12760 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-12-10 11:43:02.058  INFO 12760 --- [RMI TCP Connection(5)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:31:32.823  INFO 12260 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 12260 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:31:32.828 DEBUG 12260 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:31:32.829  INFO 12260 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:31:33.831  INFO 12260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:31:33.850  INFO 12260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:31:33.851  INFO 12260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:31:33.948  INFO 12260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:31:33.948  INFO 12260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1075 ms
+2020-12-14 09:31:34.047  WARN 12260 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'release-notes' contains invalid characters, please migrate to a valid format.
+2020-12-14 09:31:34.203  INFO 12260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:31:34.483  INFO 12260 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:31:34.567  INFO 12260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:31:34.571  INFO 12260 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.99 seconds (JVM running for 2.762)
+2020-12-14 09:31:36.274  INFO 12260 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:31:36.275  INFO 12260 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:31:36.279  INFO 12260 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 09:32:22.124  INFO 12260 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:32:22.129  INFO 12260 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:32:26.463  INFO 10836 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 10836 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:32:26.466 DEBUG 10836 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:32:26.466  INFO 10836 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:32:27.255  INFO 10836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:32:27.263  INFO 10836 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:32:27.263  INFO 10836 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:32:27.346  INFO 10836 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:32:27.346  INFO 10836 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 850 ms
+2020-12-14 09:32:27.560  INFO 10836 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:32:27.797  INFO 10836 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:32:27.846  INFO 10836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:32:27.849  INFO 10836 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.631 seconds (JVM running for 2.205)
+2020-12-14 09:32:28.257  INFO 10836 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:32:28.258  INFO 10836 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:32:28.263  INFO 10836 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-12-14 09:35:31.494  INFO 10836 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:35:31.501  INFO 10836 --- [RMI TCP Connection(7)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:35:35.808  INFO 6824 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 6824 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:35:35.810 DEBUG 6824 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:35:35.810  INFO 6824 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:35:36.686  INFO 6824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:35:36.698  INFO 6824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:35:36.699  INFO 6824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:35:36.792  INFO 6824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:35:36.793  INFO 6824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 951 ms
+2020-12-14 09:35:37.015  INFO 6824 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:35:37.273  INFO 6824 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:35:37.328  INFO 6824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:35:37.330  INFO 6824 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.797 seconds (JVM running for 2.408)
+2020-12-14 09:35:38.897  INFO 6824 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:35:38.897  INFO 6824 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:35:38.901  INFO 6824 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 09:36:03.025  INFO 6824 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:36:03.032  INFO 6824 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:36:07.368  INFO 16180 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 16180 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:36:07.370 DEBUG 16180 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:36:07.371  INFO 16180 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:36:08.197  INFO 16180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:36:08.204  INFO 16180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:36:08.204  INFO 16180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:36:08.312  INFO 16180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:36:08.312  INFO 16180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 911 ms
+2020-12-14 09:36:08.532  INFO 16180 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:36:08.787  INFO 16180 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:36:08.842  INFO 16180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:36:08.845  INFO 16180 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.747 seconds (JVM running for 2.413)
+2020-12-14 09:36:09.029  INFO 16180 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:36:09.029  INFO 16180 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:36:09.033  INFO 16180 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 09:38:54.350  INFO 16180 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:38:54.355  INFO 16180 --- [RMI TCP Connection(6)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:38:58.605  INFO 1548 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 1548 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:38:58.607 DEBUG 1548 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:38:58.607  INFO 1548 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:38:59.352  INFO 1548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:38:59.360  INFO 1548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:38:59.361  INFO 1548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:38:59.446  INFO 1548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:38:59.446  INFO 1548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 809 ms
+2020-12-14 09:38:59.683  INFO 1548 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:38:59.920  INFO 1548 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 6 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:38:59.971  INFO 1548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:38:59.973  INFO 1548 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.622 seconds (JVM running for 2.183)
+2020-12-14 09:39:02.673  INFO 1548 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:39:02.674  INFO 1548 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:39:02.678  INFO 1548 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 09:44:58.526  INFO 1548 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:44:58.530  INFO 1548 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:45:02.686  INFO 9052 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 9052 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:45:02.688 DEBUG 9052 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:45:02.688  INFO 9052 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:45:03.461  INFO 9052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:45:03.469  INFO 9052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:45:03.469  INFO 9052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:45:03.554  INFO 9052 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:45:03.554  INFO 9052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 837 ms
+2020-12-14 09:45:03.771  INFO 9052 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:45:04.000  INFO 9052 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:45:04.051  INFO 9052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:45:04.054  INFO 9052 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.621 seconds (JVM running for 2.186)
+2020-12-14 09:45:06.168  INFO 9052 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:45:06.169  INFO 9052 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:45:06.182  INFO 9052 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-12-14 09:46:08.510  INFO 9052 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:46:08.516  INFO 9052 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:46:12.583  INFO 14344 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 14344 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:46:12.585 DEBUG 14344 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:46:12.586  INFO 14344 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:46:13.353  INFO 14344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:46:13.361  INFO 14344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:46:13.361  INFO 14344 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:46:13.445  INFO 14344 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:46:13.446  INFO 14344 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 830 ms
+2020-12-14 09:46:13.657  INFO 14344 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:46:13.896  INFO 14344 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:46:13.950  INFO 14344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:46:13.954  INFO 14344 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.619 seconds (JVM running for 2.182)
+2020-12-14 09:46:16.371  INFO 14344 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:46:16.372  INFO 14344 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:46:16.385  INFO 14344 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-12-14 09:48:29.972  INFO 14344 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:48:29.978  INFO 14344 --- [RMI TCP Connection(7)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:48:35.402  INFO 14820 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 14820 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:48:35.404 DEBUG 14820 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:48:35.404  INFO 14820 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:48:36.183  INFO 14820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:48:36.191  INFO 14820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:48:36.191  INFO 14820 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:48:36.282  INFO 14820 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:48:36.282  INFO 14820 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 847 ms
+2020-12-14 09:48:36.534  INFO 14820 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:48:36.777  INFO 14820 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:48:36.830  INFO 14820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:48:36.833  INFO 14820 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.702 seconds (JVM running for 2.368)
+2020-12-14 09:48:38.575  INFO 14820 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:48:38.576  INFO 14820 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:48:38.585  INFO 14820 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-12-14 09:52:29.688  INFO 14820 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 09:52:29.695  INFO 14820 --- [RMI TCP Connection(7)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:52:34.047  INFO 7692 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 7692 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 09:52:34.048 DEBUG 7692 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 09:52:34.049  INFO 7692 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 09:52:34.863  INFO 7692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 09:52:34.870  INFO 7692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 09:52:34.871  INFO 7692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 09:52:34.958  INFO 7692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 09:52:34.958  INFO 7692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 875 ms
+2020-12-14 09:52:35.182  INFO 7692 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 09:52:35.443  INFO 7692 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 09:52:35.497  INFO 7692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 09:52:35.499  INFO 7692 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.713 seconds (JVM running for 2.296)
+2020-12-14 09:52:37.572  INFO 7692 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 09:52:37.573  INFO 7692 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 09:52:37.578  INFO 7692 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 10:00:39.517  INFO 7692 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 10:00:39.523  INFO 7692 --- [RMI TCP Connection(12)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:00:43.901  INFO 5144 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 5144 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 10:00:43.903 DEBUG 5144 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 10:00:43.904  INFO 5144 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 10:00:44.765  INFO 5144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 10:00:44.773  INFO 5144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 10:00:44.774  INFO 5144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 10:00:44.855  INFO 5144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 10:00:44.855  INFO 5144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 919 ms
+2020-12-14 10:00:44.966  WARN 5144 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'release-notes' contains invalid characters, please migrate to a valid format.
+2020-12-14 10:00:45.126  INFO 5144 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:00:45.386  INFO 5144 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 10:00:45.448  INFO 5144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 10:00:45.452  INFO 5144 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.813 seconds (JVM running for 2.427)
+2020-12-14 10:00:47.360  INFO 5144 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 10:00:47.361  INFO 5144 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 10:00:47.372  INFO 5144 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-12-14 10:00:48.899 ERROR 5144 --- [http-nio-80-exec-1] c.o.w.controller.CustomErrorController   : Error with status code 404 happened. Support! Do something about it!
+2020-12-14 10:02:22.990  INFO 5144 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 10:02:22.996  INFO 5144 --- [RMI TCP Connection(7)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:02:27.338  INFO 12864 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 12864 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 10:02:27.340 DEBUG 12864 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 10:02:27.341  INFO 12864 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 10:02:28.194  INFO 12864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 10:02:28.204  INFO 12864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 10:02:28.204  INFO 12864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 10:02:28.312  INFO 12864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 10:02:28.312  INFO 12864 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 936 ms
+2020-12-14 10:02:28.548  INFO 12864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:02:28.794  INFO 12864 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 10:02:28.857  INFO 12864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 10:02:28.859  INFO 12864 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.786 seconds (JVM running for 2.378)
+2020-12-14 10:02:29.634  INFO 12864 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 10:02:29.634  INFO 12864 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 10:02:29.638  INFO 12864 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 10:02:42.579 ERROR 12864 --- [http-nio-80-exec-1] c.o.w.controller.CustomErrorController   : Error with status code 404 happened. Support! Do something about it!
+2020-12-14 10:03:35.084  INFO 12864 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 10:03:35.090  INFO 12864 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:03:39.469  INFO 9436 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 9436 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 10:03:39.471 DEBUG 9436 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 10:03:39.471  INFO 9436 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 10:03:40.328  INFO 9436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 10:03:40.336  INFO 9436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 10:03:40.337  INFO 9436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 10:03:40.419  INFO 9436 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 10:03:40.420  INFO 9436 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 912 ms
+2020-12-14 10:03:40.652  INFO 9436 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:03:40.914  INFO 9436 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 10:03:40.969  INFO 9436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 10:03:40.972  INFO 9436 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.774 seconds (JVM running for 2.395)
+2020-12-14 10:03:42.926  INFO 9436 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 10:03:42.927  INFO 9436 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 10:03:42.932  INFO 9436 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-12-14 10:04:17.432  INFO 9436 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 10:04:17.439  INFO 9436 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:04:21.808  INFO 9900 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 9900 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 10:04:21.810 DEBUG 9900 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 10:04:21.810  INFO 9900 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 10:04:22.673  INFO 9900 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 10:04:22.681  INFO 9900 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 10:04:22.681  INFO 9900 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 10:04:22.768  INFO 9900 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 10:04:22.768  INFO 9900 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 916 ms
+2020-12-14 10:04:22.982  INFO 9900 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:04:23.264  INFO 9900 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 10:04:23.335  INFO 9900 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 10:04:23.338  INFO 9900 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.784 seconds (JVM running for 2.457)
+2020-12-14 10:04:25.084  INFO 9900 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 10:04:25.084  INFO 9900 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 10:04:25.088  INFO 9900 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 10:05:34.118  INFO 9900 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 10:05:34.125  INFO 9900 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:05:38.463  INFO 672 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 672 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 10:05:38.465 DEBUG 672 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 10:05:38.465  INFO 672 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 10:05:39.263  INFO 672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 10:05:39.272  INFO 672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 10:05:39.272  INFO 672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 10:05:39.358  INFO 672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 10:05:39.358  INFO 672 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 858 ms
+2020-12-14 10:05:39.580  INFO 672 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 10:05:39.827  INFO 672 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 10:05:39.877  INFO 672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 10:05:39.880  INFO 672 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.662 seconds (JVM running for 2.252)
+2020-12-14 10:05:40.391  INFO 672 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 10:05:40.391  INFO 672 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 10:05:40.395  INFO 672 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 10:40:07.478  INFO 672 --- [RMI TCP Connection(38)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 10:40:07.486  INFO 672 --- [RMI TCP Connection(38)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 21:30:58.362  INFO 8388 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 8388 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 21:30:58.364 DEBUG 8388 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 21:30:58.364  INFO 8388 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 21:30:59.263  INFO 8388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 21:30:59.273  INFO 8388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 21:30:59.273  INFO 8388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 21:30:59.388  INFO 8388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 21:30:59.389  INFO 8388 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2020-12-14 21:30:59.661  INFO 8388 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 21:31:00.115  INFO 8388 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 21:31:00.181  INFO 8388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 21:31:00.187  INFO 8388 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 2.094 seconds (JVM running for 2.712)
+2020-12-14 21:31:00.205  INFO 8388 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 21:31:00.205  INFO 8388 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 21:31:00.210  INFO 8388 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-12-14 21:31:20.467  INFO 8388 --- [http-nio-80-exec-2] c.o.w.controller.WatchlistController     : GET /watchlist called
+2020-12-14 21:31:25.451  INFO 8388 --- [http-nio-80-exec-3] c.o.w.controller.WatchlistController     : GET /watchlistItemForm called
+2020-12-14 21:31:31.943  INFO 8388 --- [http-nio-80-exec-4] c.o.w.controller.WatchlistController     : POST /watchlistItemForm called
+2020-12-14 21:31:32.044  INFO 8388 --- [http-nio-80-exec-5] c.o.w.controller.WatchlistController     : GET /watchlistItemForm called
+2020-12-14 21:31:41.869  INFO 8388 --- [http-nio-80-exec-6] c.o.w.controller.WatchlistController     : GET /watchlist called
+2020-12-14 21:32:16.748  INFO 8388 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 21:32:16.752  INFO 8388 --- [RMI TCP Connection(6)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-14 21:32:21.145  INFO 15112 --- [main] c.o.watchlist.WatchlistApplication       : Starting WatchlistApplication on LAPTOP-A3QPNUS2 with PID 15112 (D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist\target\classes started by km in D:\Cours\Spring\SpringBoot\repo\Watchlist\watchlist)
+2020-12-14 21:32:21.147 DEBUG 15112 --- [main] c.o.watchlist.WatchlistApplication       : Running with Spring Boot v2.2.11.RELEASE, Spring v5.2.10.RELEASE
+2020-12-14 21:32:21.147  INFO 15112 --- [main] c.o.watchlist.WatchlistApplication       : No active profile set, falling back to default profiles: default
+2020-12-14 21:32:21.990  INFO 15112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-12-14 21:32:21.998  INFO 15112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-14 21:32:21.999  INFO 15112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-14 21:32:22.087  INFO 15112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-14 21:32:22.088  INFO 15112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 911 ms
+2020-12-14 21:32:22.336  INFO 15112 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-14 21:32:22.586  INFO 15112 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoint(s) beneath base path '/actuator'
+2020-12-14 21:32:22.640  INFO 15112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-12-14 21:32:22.643  INFO 15112 --- [main] c.o.watchlist.WatchlistApplication       : Started WatchlistApplication in 1.762 seconds (JVM running for 2.368)
+2020-12-14 21:32:25.390  INFO 15112 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-14 21:32:25.391  INFO 15112 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-14 21:32:25.396  INFO 15112 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-14 21:32:30.507  INFO 15112 --- [http-nio-80-exec-1] c.o.w.controller.WatchlistController     : GET /watchlist called
+2020-12-14 21:35:18.330  INFO 15112 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-12-14 21:35:18.335  INFO 15112 --- [RMI TCP Connection(8)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
